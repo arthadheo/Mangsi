@@ -25,4 +25,18 @@ class Welcome extends CI_Controller
 		$this->load->view('page/home');
 		$this->load->view('layout/page_footer');
 	}
+
+	public function login()
+	{
+		$this->load->view('layout/auth_header');
+		$this->load->view('auth/login');
+		$this->load->view('layout/auth_footer');
+	}
+
+	public function registration()
+	{
+		$this->load->view('layout/auth_header');
+		$this->load->view('auth/registration');
+		$this->load->view('layout/auth_footer');
+	}
 }
