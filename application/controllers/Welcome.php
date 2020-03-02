@@ -46,4 +46,11 @@ class Welcome extends CI_Controller
 		$this->load->view('page/profile');
 		$this->load->view('layout/page_footer');
 	}
+	
+	public function coupon()
+	{
+		$this->load->view('layout/page_header');
+		$this->load->view('page/coupon');
+		$this->load->view('layout/page_footer');
+	}
 }
