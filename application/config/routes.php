@@ -54,4 +54,5 @@ $route['404_override'] = 'error/cli/error_404';
 $route['translate_uri_dashes'] = false;
 
 $route['login'] = 'welcome/login';
-$route['register'] = 'welcome/register';
+$route['registration'] = 'welcome/registration';
+$route['profile'] = 'welcome/profile';

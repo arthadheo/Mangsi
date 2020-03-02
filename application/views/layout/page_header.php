@@ -17,6 +17,7 @@
     <!-- <link href="dist/css/shop-homepage.css" rel="stylesheet"> -->
     <link href="dist/css/simple-sidebar.css" rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/logo/Logo-mangsi.png"); ?>">
 </head>
 
 <body>

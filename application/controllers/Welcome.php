@@ -39,4 +39,11 @@ class Welcome extends CI_Controller
 		$this->load->view('auth/registration');
 		$this->load->view('layout/auth_footer');
 	}
+
+	public function profile()
+	{
+		$this->load->view('layout/page_header');
+		$this->load->view('page/profile');
+		$this->load->view('layout/page_footer');
+	}
 }
