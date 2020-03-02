@@ -55,3 +55,5 @@ $route['translate_uri_dashes'] = false;
 
 $route['login'] = 'welcome/login';
 $route['register'] = 'welcome/register';
+$route['coupon'] = 'welcome/coupon';
+$route['coupon_detail'] = 'welcome/coupon_detail';
