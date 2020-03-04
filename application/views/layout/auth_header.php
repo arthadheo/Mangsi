@@ -20,7 +20,7 @@
     <!-- <link href="dist/css/shop-homepage.css" rel="stylesheet"> -->
     <link href="<?= base_url('dist/'); ?>css/login.css" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/logo/Logo-mangsi.png"); ?>">
+    <link rel="shortcut icon" href="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.ico">
 </head>
 
 <body>

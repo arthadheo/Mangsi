@@ -16,8 +16,8 @@
     <!-- Custom styles for this template -->
     <!-- <link href="dist/css/shop-homepage.css" rel="stylesheet"> -->
     <link href="dist/css/simple-sidebar.css" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/logo/Logo-mangsi.png"); ?>">
+    
+    <link rel="shortcut icon" href="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.ico">
 </head>
 
 <body>
