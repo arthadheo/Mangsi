@@ -52,6 +52,12 @@ class System_model extends CI_Model {
 		//menghapus suatu baris dari suatu tabel
 		$this->db->delete($table, $where);
 	}
+
+	function fetch_data()
+	{
+		$query = $this->db->get("pelanggan");
+		return $query;
+	}
 }
 
 //fk
