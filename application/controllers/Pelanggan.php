@@ -13,7 +13,8 @@ class Pelanggan extends CI_Controller
 
 	public function index()
 	{
-		
+		$data["fetch_data"] = $this->System_model->fetch_data();
+		$this->load->view("page/profile", $data);
 	}
 
 	public function coupon()
