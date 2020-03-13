@@ -5,10 +5,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-9 col-lg-8 mx-auto">
-                            <h3 class="text-center login-heading mb-4">Logo Mangsi</h3>
-                            <form>
+                            <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
+                            <form method="post" action="<?php echo base_url()?>Registration_C/form_validation">
+                            <?php
+                            if($this->uri->segment(3) == "inserted")
+                            {
+                                echo '<p class="text-success"> Data Inserted</p>';
+                            }
+                            ?>
                                 <div class="form-label-group">
-                                    <input type="text" id="name" name="name" class="form-control" placeholder="Email address" required autofocus>
+                                    <input type="text" id="name" name="full_name" class="form-control" placeholder="Email address" required autofocus>
+                                    <span class="text-danger"><?php echo form_error("full_name"); ?></span>
                                     <label for="name">Full Name</label>
                                 </div>
                                 <div class="form-label-group">
@@ -26,7 +33,7 @@
                                     <label for="password2">Confirm Password</label>
                                 </div>
 
-                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign up</button>
+                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="insert" value="Insert">Sign up</button>
                                 <div class="text-center">
                                     <h6>or</h6>
 

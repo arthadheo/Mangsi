@@ -92,12 +92,6 @@ class System_model extends CI_Model {
         return $userID?$userID:false; 
     } 
 
-	function fetch_data()
-	{
-		$query = $this->db->get("pelanggan");
-		return $query;
-	}
-
 }
 
 //fk
