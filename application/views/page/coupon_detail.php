@@ -1,5 +1,5 @@
 <div class="card-footer">
-    <h6>your points : xxx pts</h6>
+    <h6>Your points : xxx pts</h6>
 </div>
 
 <div class="container">
