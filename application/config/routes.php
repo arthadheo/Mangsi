@@ -58,3 +58,4 @@ $route['registration'] = 'welcome/registration';
 $route['profile'] = 'welcome/profile';
 $route['coupon'] = 'pelanggan/coupon';
 $route['coupon_detail'] = 'pelanggan/coupon_detail';
+$route['store'] = 'pelanggan/store';

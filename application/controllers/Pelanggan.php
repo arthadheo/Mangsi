@@ -3,12 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pelanggan extends CI_Controller
 {
-	function __construct() {
+	function __construct()
+	{
 		parent::__construct();
 		/*if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
         }*/
-        $this->load->model('System_model');
+		$this->load->model('System_model');
 	}
 
 	public function index()
@@ -42,5 +43,12 @@ class Pelanggan extends CI_Controller
 		$this->load->view('layout/page_header');
 		$this->load->view('page/coupon_detail', $data);
 		$this->load->view('layout/page_footer');
-	}	
+	}
+
+	public function store()
+	{
+		$this->load->view('layout/page_header');
+		$this->load->view('page/store');
+		$this->load->view('layout/page_footer');
+	}
 }
