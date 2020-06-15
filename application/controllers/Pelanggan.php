@@ -6,24 +6,23 @@ class Pelanggan extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		/*if($this->session->userdata('status') != "login"){
+		if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
-        }*/
+        }
 		$this->load->model('System_model');
 	}
 
 	public function index()
 	{
-		$data["fetch_data"] = $this->System_model->fetch_data();
-		$this->load->view('page/profile', $data);
+		$this->load->view('layout/page_header');
+		$this->load->view('page/home');
+		$this->load->view('layout/page_footer');
 	}
 
 	public function coupon()
 	{
 		//get data from db
 		$data['coupon'] = $this->System_model->select_all('coupon');
-		$id = $this->session->userdata('id');
-		$data['point'] = $this->System_model->get_by_atr('pelanggan', array('id_pelanggan' => $id));
 		//load coupon view
 		$this->load->view('layout/page_header');
 		$this->load->view('page/coupon', $data);
