@@ -35,4 +35,10 @@ class Pelanggan extends CI_Controller
 		//$this->load->view('coupon_details', $data);
 
 	}	
+
+	public function get_point()
+	{
+		$data['get_point'] = $this->System_model->get_by_atr('pelanggan', 'point');
+		$this->load->view('get', $data);
+	}
 }
