@@ -42,21 +42,18 @@ class Pelanggan extends CI_Controller
 		$this->load->view('layout/page_header');
 		$this->load->view('page/coupon_detail', $data);
 		$this->load->view('layout/page_footer');
-	}
-
-<<<<<<< HEAD
 	}	
 
 	public function get_point()
 	{
 		$data['get_point'] = $this->System_model->get_by_atr('pelanggan', 'point');
 		$this->load->view('get', $data);
-=======
+
+	}
 	public function store()
 	{
 		$this->load->view('layout/page_header');
 		$this->load->view('page/store');
 		$this->load->view('layout/page_footer');
->>>>>>> f20ee5f91faf430eb18acac04d80e7e178c5505e
 	}
 }
