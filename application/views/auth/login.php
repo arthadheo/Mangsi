@@ -5,8 +5,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
+<<<<<<< HEAD
             <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
               <form>
+=======
+              <h3 class="text-center login-heading mb-4">Logo Mangsi</h3>
+              <form method="post" action="<?php echo base_url()?>auth/signing_in">
+>>>>>>> f20ee5f91faf430eb18acac04d80e7e178c5505e
                 <div class="form-label-group">
                   <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
                   <label for="email">Email address</label>
@@ -19,7 +24,7 @@
 
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                 <hr>
-                <button class="btn btn-danger btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">
+                <button class="btn btn-danger btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2">
                   <i class="fab fa-google fa-fw"></i> Sign in with google
                 </button>
                 <hr>
@@ -27,7 +32,7 @@
                   <a class="small" href="#">Forgot password?</a>
                 </div>
                 <div class="text-center">
-                  <a class="small" href="#">Create Account</a>
+                  <a class="small" href="<?= base_url()?>registration">Create Account</a>
                 </div>
 
               </form>

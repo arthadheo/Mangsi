@@ -27,20 +27,20 @@
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             <h4 class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-text mx-3">Nama Pengguna</div>
+                <div class="sidebar-brand-text mx-3"><?= $this->session->userdata('first_name') ?></div>
             </h4>
             <h6 class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-text mx-3">Email Pengguna</div>
+                <div class="sidebar-brand-text mx-3"><?= $this->session->userdata('email') ?></div>
             </h6>
             <h6 class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-text mx-3">Poin Pengguna</div>
+                <div class="sidebar-brand-text mx-3"><?= $this->session->userdata('point') ?></div>
             </h6>
             <div class="list-group list-group-flush">
                 <a href="#" class="list-group-item list-group-item-action bg-light">My Account</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">My Coupon</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Reserve Table</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Setting</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Sign out</a>
+                <a href="<?= base_url('auth/signing_out') ?>" class="list-group-item list-group-item-action bg-light">Sign out</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -68,7 +68,7 @@
                             <a class="nav-link" href="<?= base_url('coupon'); ?>">Coupon</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Store</a>
+                            <a class="nav-link" href="<?= base_url('store'); ?>">Store</a>
                         </li>
                     </ul>
                 </div>
