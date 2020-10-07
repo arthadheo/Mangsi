@@ -3,6 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        /*if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }*/
+        $this->load->model('System_model');
+    }
+
     public function index()
     {
         $this->load->view('layout/auth_header');
@@ -18,9 +27,51 @@ class Auth extends CI_Controller
         $this->load->view('layout/auth_footer');
     }
 
+    public function signing_in()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        $where = array('email' => $email, 
+                        'password_pelanggan' => md5($password)
+        );
+
+        $result = $this->System_model->get_by_atr('pelanggan', $where)->num_rows();
+
+        if($result > 0)
+        {
+            $temp = $this->System_model->get_by_atr('pelanggan', $where)->row();
+            $firstname = $temp->first_name;
+            $lastname = $temp->last_name;
+            $point = $temp->point;
+            
+            $data_session = array(
+                'id'=> $temp->id_pelanggan,
+                'first_name' => $firstname,
+                'last_name' => $lastname,
+                'email' => $email,
+                'point' => $point,
+                'status' => "login"
+              );
+            
+            $this->session->set_userdata($data_session);
+
+            redirect(base_url());
+        } else{
+            
+            $data['invalid'] = "Invalid login credentials";
+            $this->load->view("login", $data);
+        }
+    }
+
+    function signing_out()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url('login'));
+    }
+
     public function signing_up()
     {
-        $this->load->model('System_model');
         $email = $this->input->post('email');
         $password1 = $this->input->post('password1');
         $password2 = $this->input->post('password2');
@@ -29,12 +80,12 @@ class Auth extends CI_Controller
         if($password1 == $password2)
         {
             $where = array(
-            'user_email' => $email,
-            'user_password' => md5($password1),
-            'user_name' => $username
+            'email' => $email,
+            'password_pelanggan' => md5($password1),
+            'first_name' => $username
         );
 
-        $result = $this->System_model->get_by_atr('user', $where)->num_rows();
+        $result = $this->System_model->get_by_atr('pelanggan', $where)->num_rows();
 
         if($result > 0)
         {
