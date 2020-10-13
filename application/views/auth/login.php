@@ -5,6 +5,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
+            <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
+              <form>
               <h3 class="text-center login-heading mb-4">Logo Mangsi</h3>
               <form method="post" action="<?php echo base_url()?>auth/signing_in">
                 <div class="form-label-group">
@@ -31,6 +33,7 @@
                 </div>
 
               </form>
+              <button onclick="window.location.href='<?= $loginURL ?>';">gugel sign in</button>
             </div>
           </div>
         </div>

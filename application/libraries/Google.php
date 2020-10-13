@@ -15,7 +15,7 @@ class Google {
 	{
 		$this->ci =& get_instance();
 
-        include_once 'C:\Users\User\vendor\autoload.php';
+        //include_once 'C:\newxampp\vendor\autoload.php';
 
 		$this->ci->load->config('google');
 
@@ -29,6 +29,7 @@ class Google {
         $this->client->setRedirectUri($this->ci->config->item('redirectUri'));
         $this->client->setDeveloperKey($this->ci->config->item('apiKey'));
 
+        $this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
         $this->client->setAccessType('offline');
 
