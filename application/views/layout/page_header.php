@@ -50,7 +50,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <a href="#" id="menu-toggle">
-                    <img id="avatar" src="<?= base_url('dist/'); ?>images/bitmap.png" alt="thumbnail" width="200px" />
+                    <img id="avatar" src="<?= base_url('dist/'); ?>images/profile/default.png" alt="thumbnail" width="200px" />
                 </a>
 
                 <a class="navbar-brand mx-auto" href="#">Start Bootstrap</a>
