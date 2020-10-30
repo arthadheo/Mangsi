@@ -94,6 +94,5 @@ class System_model extends CI_Model {
 
 }
 
-}
 
 //end of file
