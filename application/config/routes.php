@@ -53,9 +53,11 @@ $route['default_controller'] = 'pelanggan';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
-$route['login'] = 'welcome/login';
-$route['registration'] = 'welcome/registration';
-$route['profile'] = 'welcome/profile';
+$route['login'] = 'auth';
+$route['registration'] = 'auth/registration';
+$route['forgot_password'] = 'auth/forgotPassword';
+$route['profile'] = 'pelanggan/profile';
 $route['coupon'] = 'pelanggan/coupon';
 $route['coupon_detail'] = 'pelanggan/coupon_detail';
 $route['store'] = 'pelanggan/store';
+$route['admin'] = 'admin';

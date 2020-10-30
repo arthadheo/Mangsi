@@ -6,7 +6,8 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
-                            <form method="post" action="<?php echo base_url()?>Registration_C/form_validation">
+                            <?= $this->session->flashdata('message'); ?>
+                            <form method="post" action="<?php echo base_url()?>auth/signing_up">
                             <?php
                             if($this->uri->segment(3) == "inserted")
                             {

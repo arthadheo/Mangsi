@@ -6,8 +6,9 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
             <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
-              <form>
+              
               <h3 class="text-center login-heading mb-4">Logo Mangsi</h3>
+              <?= $this->session->flashdata('message'); ?>
               <form method="post" action="<?php echo base_url()?>auth/signing_in">
                 <div class="form-label-group">
                   <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
@@ -26,14 +27,13 @@
                 </button>
                 <hr>
                 <div class="text-center">
-                  <a class="small" href="#">Forgot password?</a>
+                  <a class="small" href="<?= base_url('forgot_password'); ?>">Forgot password?</a>
                 </div>
                 <div class="text-center">
                   <a class="small" href="<?= base_url()?>registration">Create Account</a>
                 </div>
 
               </form>
-              <button onclick="window.location.href='<?= $loginURL ?>';">gugel sign in</button>
             </div>
           </div>
         </div>

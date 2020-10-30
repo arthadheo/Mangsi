@@ -1,5 +1,5 @@
 <div class="card-footer">
-    <h6>Your points : <?= $this->session->userdata('point') ?> pts</h6>
+    <h6>Your points : <?= $_SESSION['userData']['point'] ?> pts</h6>
 </div>
 
 <div class="container">
