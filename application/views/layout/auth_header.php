@@ -20,6 +20,8 @@
     <!-- <link href="dist/css/shop-homepage.css" rel="stylesheet"> -->
     <link href="<?= base_url('dist/'); ?>css/login.css" rel="stylesheet">
 
+    <link rel="shortcut icon" href="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.ico">
 </head>
 
 <body>
+</body>
