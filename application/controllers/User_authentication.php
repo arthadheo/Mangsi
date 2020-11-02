@@ -32,8 +32,8 @@ class User_authentication extends CI_Controller {
                 // Preparing data for database insertion 
                 $userData['oauth_provider'] = 'google'; 
                 $userData['oauth_uid']         = $gpInfo['id']; 
-                $userData['first_name']     = $gpInfo['given_name']; 
-                $userData['last_name']         = $gpInfo['family_name']; 
+                $userData['first_name']     = $gpInfo['name']; 
+                $userData['last_name']         = $gpInfo['name']; 
                 $userData['email']             = $gpInfo['email']; 
                 //$userData['gender']         = !empty($gpInfo['gender'])?$gpInfo['gender']:''; 
                 //$userData['locale']         = !empty($gpInfo['locale'])?$gpInfo['locale']:''; 
@@ -47,7 +47,7 @@ class User_authentication extends CI_Controller {
                 $this->session->set_userdata('userData', $userData); 
                  
                 // Redirect to profile page 
-                redirect('welcome');
+                redirect('User_authentication/profile');
             //} 
         }  
          
@@ -66,14 +66,15 @@ class User_authentication extends CI_Controller {
          
         // Get user info from session 
         $data['userData'] = $this->session->userdata('userData'); 
+        $data['oauth'] = TRUE;
          
         // Load user profile view 
-        $this->load->view('user_authentication/profile',$data); 
+        $this->load->view('page/home',$data); 
     } 
      
     public function logout(){ 
         // Reset OAuth access token 
-        $this->google->revokeToken(); 
+        $this->google->logout(); 
          
         // Remove token and user data from the session 
         $this->session->unset_userdata('loggedIn'); 

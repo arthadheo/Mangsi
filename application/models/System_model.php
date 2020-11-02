@@ -100,5 +100,4 @@ class System_model extends CI_Model {
 
 }
 
-//fk
 //end of file

@@ -33,6 +33,7 @@
                 </div>
 
               </form>
+              <button onclick="window.location.href='<?= $loginURL ?>';">gugel sign in</button>
             </div>
           </div>
         </div>

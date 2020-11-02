@@ -24,8 +24,8 @@ $config['google']['application_name'] = 'Login to Mangsi Membership';
 $config['google']['api_key']          = '';
 $config['google']['scopes']           = array();
 */
-$config['clientId'] = '36583164870-vgb0598bi5eumn7h5hqegpidh4nakpfg.apps.googleusercontent.com'; //add your client id
-$config['clientSecret'] = 'xf1Ksogn4-zXZtFFHYXNgQlC'; //add your client secret
-$config['redirectUri'] = 'https://localhost/mangsi/user_authentication/'; //add your redirect uri
+$config['clientId'] = '472213605676-uhhv4n7k7mhkevdnlj9d5qh1pdgqhmo1.apps.googleusercontent.com'; //add your client id
+$config['clientSecret'] = 'rRN27N0O7_GoKBzAr2gTpXSj'; //add your client secret
+$config['redirectUri'] = 'https://localhost/mangsi/auth'; //add your redirect uri
 $config['apiKey'] = ''; //add your api key here
 $config['applicationName'] ='Login to Mangsi Membership'; //application name for the api
