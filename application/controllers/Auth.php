@@ -15,7 +15,15 @@ class Auth extends CI_Controller
     {
         // Redirect to profile page if the user already logged in 
         if($this->session->userdata('loggedIn') == true){ 
-            redirect(base_url()); 
+            if(!empty($this->session->userdata('userData')))
+            {
+                redirect(base_url()); 
+            }
+            else
+            {
+                redirect(base_url('admin'));
+            }
+            
         } 
          
         if(isset($_GET['code'])){ 
@@ -63,6 +71,10 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        // Redirect to profile page if the user already logged in 
+        if($this->session->userdata('loggedIn') == true){ 
+            redirect(base_url()); 
+        } 
         $this->load->view('layout/auth_header');
         $this->load->view('auth/registration');
         $this->load->view('layout/auth_footer');
