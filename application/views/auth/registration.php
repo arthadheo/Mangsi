@@ -7,17 +7,21 @@
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <img style="padding-left: 40%; padding-bottom: 5%" src="http://localhost/Mangsi/dist/images/logo/Logo-mangsi.png">
                             <?= $this->session->flashdata('message'); ?>
-                            <form method="post" action="<?php echo base_url()?>auth/signing_up">
-                            <?php
-                            if($this->uri->segment(3) == "inserted")
-                            {
-                                echo '<p class="text-success"> Data Inserted</p>';
-                            }
-                            ?>
+                            <form method="post" action="<?php echo base_url() ?>auth/signing_up">
+                                <?php
+                                if ($this->uri->segment(3) == "inserted") {
+                                    echo '<p class="text-success"> Data Inserted</p>';
+                                }
+                                ?>
                                 <div class="form-label-group">
-                                    <input type="text" id="name" name="full_name" class="form-control" placeholder="Email address" required autofocus>
-                                    <span class="text-danger"><?php echo form_error("full_name"); ?></span>
-                                    <label for="name">Full Name</label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First Name" required autofocus>
+                                    <span class="text-danger"><?php echo form_error("first_name"); ?></span>
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last Name" required autofocus>
+                                    <span class="text-danger"><?php echo form_error("last_name"); ?></span>
+                                    <label for="last_name">Last Name</label>
                                 </div>
                                 <div class="form-label-group">
                                     <input type="text" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>

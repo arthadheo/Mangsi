@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -28,4 +28,4 @@ $config['clientId'] = '472213605676-uhhv4n7k7mhkevdnlj9d5qh1pdgqhmo1.apps.google
 $config['clientSecret'] = 'rRN27N0O7_GoKBzAr2gTpXSj'; //add your client secret
 $config['redirectUri'] = 'https://localhost/mangsi/auth'; //add your redirect uri
 $config['apiKey'] = ''; //add your api key here
-$config['applicationName'] ='Login to Mangsi Membership'; //application name for the api
+$config['applicationName'] = 'Login to Mangsi Membership'; //application name for the api

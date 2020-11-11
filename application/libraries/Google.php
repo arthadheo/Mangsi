@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
  * Login with Google for Codeigniter
@@ -10,48 +10,44 @@
  * @link        https://github.com/angel-of-death/Codeigniter-Google-OAuth-Login
  */
 
-class Google {
+class Google
+{
 	public function __construct()
 	{
-		$this->ci =& get_instance();
+		$this->ci = &get_instance();
 
-        include_once 'C:\newxampp\vendor\autoload.php';
+		include_once 'C:\xampp\vendor\autoload.php';
 
 		$this->ci->load->config('google');
 
 		$this->ci->load->library('session');
 
 		$this->client = new Google_Client();
-        $this->client->setApplicationName($this->ci->config->item('applicationName'));
+		$this->client->setApplicationName($this->ci->config->item('applicationName'));
 
-        $this->client->setClientId($this->ci->config->item('clientId'));
-        $this->client->setClientSecret($this->ci->config->item('clientSecret'));
-        $this->client->setRedirectUri($this->ci->config->item('redirectUri'));
-        $this->client->setDeveloperKey($this->ci->config->item('apiKey'));
+		$this->client->setClientId($this->ci->config->item('clientId'));
+		$this->client->setClientSecret($this->ci->config->item('clientSecret'));
+		$this->client->setRedirectUri($this->ci->config->item('redirectUri'));
+		$this->client->setDeveloperKey($this->ci->config->item('apiKey'));
 
-        $this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
-        $this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
-        $this->client->setAccessType('offline');
+		$this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
+		$this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
+		$this->client->setAccessType('offline');
 
-		if($this->ci->session->userdata('refreshToken')!=null)
-		{
+		if ($this->ci->session->userdata('refreshToken') != null) {
 			$this->loggedIn = true;
 
-			if($this->client->isAccessTokenExpired())
-			{
+			if ($this->client->isAccessTokenExpired()) {
 				$this->client->refreshToken($this->ci->session->userdata('refreshToken'));
-        		
-        		$accessToken = $this->client->getAccessToken();
 
-        		$this->client->setAccessToken($accessToken);
+				$accessToken = $this->client->getAccessToken();
+
+				$this->client->setAccessToken($accessToken);
 			}
-		}
-		else
-		{
+		} else {
 			$accessToken = $this->client->getAccessToken();
 
-			if($accessToken!=null)
-			{
+			if ($accessToken != null) {
 				$this->client->revokeToken($accessToken);
 			}
 
@@ -77,8 +73,7 @@ class Google {
 
 		$this->client->setAccessToken($accessToken);
 
-		if(isset($accessToken['refresh_token']))
-		{
+		if (isset($accessToken['refresh_token'])) {
 			$this->ci->session->set_userdata('refreshToken', $accessToken['refresh_token']);
 		}
 	}
@@ -96,11 +91,8 @@ class Google {
 
 		$accessToken = $this->client->getAccessToken();
 
-		if($accessToken!=null)
-		{
+		if ($accessToken != null) {
 			$this->client->revokeToken($accessToken);
 		}
 	}
 }
-
-?>
