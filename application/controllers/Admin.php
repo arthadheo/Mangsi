@@ -7,12 +7,12 @@ class Admin extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		if($this->session->userdata('loggedIn') != true){
-            redirect(base_url("login"));
-        }
+		if ($this->session->userdata('loggedIn') != true) {
+			redirect(base_url("login"));
+		}
 		$this->load->model('System_model');
 	}
-	
+
 	public function index()
 	{
 		$this->load->view('layout/adm_header');
@@ -38,6 +38,13 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('layout/adm_header');
 		$this->load->view('admin/adm_coupon');
+		$this->load->view('layout/adm_footer');
+	}
+
+	public function add_pegawai()
+	{
+		$this->load->view('layout/adm_header');
+		$this->load->view('admin/adm_kepegawaian');
 		$this->load->view('layout/adm_footer');
 	}
 }
