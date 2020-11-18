@@ -158,6 +158,7 @@ class Auth extends CI_Controller
 
         $this->session->unset_userdata('loggedIn'); 
         $this->session->unset_userdata('userData'); 
+        
         $this->session->sess_destroy();
 
         redirect(base_url('login'));

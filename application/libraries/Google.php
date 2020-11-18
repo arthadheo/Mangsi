@@ -16,7 +16,7 @@ class Google
 	{
 		$this->ci = &get_instance();
 
-		include_once 'C:\xampp\vendor\autoload.php';
+		include_once 'C:\newxampp\vendor\autoload.php';
 
 		$this->ci->load->config('google');
 
