@@ -6,7 +6,7 @@ class Pelanggan extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		if($this->session->userdata('loggedIn') != true && empty($this->session->userdata('userData'))){
+		if($this->session->userdata('loggedIn') != 'pelanggan'){
             redirect(base_url("login"));
         }
 		$this->load->model('System_model');
